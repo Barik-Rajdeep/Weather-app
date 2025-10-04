@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="weather-effects-container"></div>
+    <header>
+        <h1>🌎 Weather Dashboard</h1>
+        <div class="search-bar">
+            <input type="text" id="city-input" placeholder="Enter city name" aria-label="City Name Input">
+            <button id="search-btn" aria-label="Search for city">Search</button>
+            <button id="location-btn" aria-label="Use my current location">📍 My Location</button>
+        </div>
+    </header>
+
+    <section class="recent-searches">
+        <h2>Recent Searches</h2>
+        <div id="recent-searches-container">
+            <!-- Recent search buttons will be added here by script.js -->
+        </div>
+    </section>
+
+    <div id="initial-message" class="card">
+        <h2>Search for a city or use your location to see the weather forecast.</h2>
+    </div>
+
+    <main>
+        <div class="card" id="current-weather">
+            <h3>Current Weather</h3>
+            <p id="location">Location</p>
+            <div id="weather-icon">☁️</div>
+            <p id="temp">Temp</p>
+            <p id="description">Weather Description</p>
+        </div>
+
+        <div class="card" id="details">
+            <h3>Details</h3>
+            <p>💧 Humidity: <span id="humidity"></span></p>
+            <p>🌬️ Wind: <span id="wind"></span></p>
+            <p>🌅 Sunrise: <span id="sunrise"></span></p>
+            <p>🌇 Sunset: <span id="sunset"></span></p>
+            <p>🎯 Pressure: <span id="pressure"></span></p>
+            <p>👀 Visibility: <span id="visibility"></span></p>
+        </div>
+
+        <div class="card" id="next-12-hours">
+            <h3>Next 12 Hours</h3>
+            <canvas id="hourlyChart"></canvas>
+        </div>
+
+        <div class="card" id="5-day-forecast">
+            <h3>5-Day Forecast</h3>
+            <canvas id="dailyChart"></canvas>
+        </div>
+    </main>
+
+    <footer>
+        <p>Powered by Flask + OpenWeatherMap</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
